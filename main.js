@@ -1,0 +1,398 @@
+let cbuxl = document.getElementById("cbuxl");
+let cbu = document.getElementById("cbu");
+let nombreApodo = document.getElementById("nombreApodo");
+let bienvenida = document.getElementById("modal-button2");
+let registrar = document.getElementById("modal-button");
+let info = document.getElementById("info");
+let retiro = document.getElementById("retiro");
+let retiroExitoso = document.getElementById("retiroExitoso");
+let premioEnviado = document.getElementById("premioEnviado");
+let sistemaDePagos = document.getElementById("sistemaDePagos");
+let demorasPagos = document.getElementById("demorasPagos");
+let sistemaRecomendacion = document.getElementById("sistemaRecomendacion");
+let bonificacion = document.getElementById("bonificacion");
+let solicitarComprobante = document.getElementById("solicitarComprobante");
+let solicitarUsuario = document.getElementById("solicitarUsuario");
+let publicidad = document.getElementById("publicidad");
+let noIngreso = document.getElementById("noIngreso");
+let cbuEquivocado = document.getElementById("cbuEquivocado");
+let mantenimiento = document.getElementById("mantenimiento");
+let soporte = document.getElementById("soporte");
+let form = document.getElementById("form");
+let form_button = document.getElementById("formButton");
+let usuario = document.getElementById("usuario");
+let modal = document.getElementById("myModal");
+let btn = document.getElementById("pad-button-reg");
+let span = document.getElementsByClassName("close")[0];
+let usuario2 = document.getElementById("usuario2");
+let modal2 = document.getElementById("myModal2");
+let btn2 = document.getElementById("pad-button-reg2");
+let span2 = document.getElementsByClassName("close2")[0];
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  globalThis.inputNombre = document.getElementById("name").value;
+  globalThis.inputCBU = document.getElementById("number").value;
+  globalThis.inputAlias = document.getElementById("alias").value;
+
+  if (inputNombre.length != 0 && inputCBU != 0 && inputAlias.length != 0) {
+    cbuxl.addEventListener("click", () => {
+      const texto = `✅ *DATOS DEL CBU VIGENTE* ✅
+
+*Cuenta a nombre de:* ${inputNombre}
+*CBU:* ${inputCBU}
+*ALIAS:* ${inputAlias}
+
+💸 *MÍNIMO DE CARGA $1.000* 💸
+Envíe el comprobante y debajo únicamente su usuario asignado.
+💻 https://universegame.best 
+
+🚨 *NO ENVÍE DINERO SIN CONSULTAR EL CBU PREVIAMENTE.* Si no consulta y transfiere a una cuenta inactiva, la acreditación de sus fichas se demorará.`;
+      const elementoTemporal = document.createElement("textarea");
+      elementoTemporal.value = texto;
+      document.body.appendChild(elementoTemporal);
+      elementoTemporal.select();
+      elementoTemporal.setSelectionRange(0, 9999);
+      document.execCommand("copy");
+      document.body.removeChild(elementoTemporal);
+    });
+
+    cbu.addEventListener("click", () => {
+      const texto = `${inputCBU}`;
+      const elementoTemporal = document.createElement("textarea");
+      elementoTemporal.value = texto;
+      document.body.appendChild(elementoTemporal);
+      elementoTemporal.select();
+      elementoTemporal.setSelectionRange(0, 9999);
+      document.execCommand("copy");
+      document.body.removeChild(elementoTemporal);
+    });
+
+    document.getElementById("name").value = "";
+    document.getElementById("number").value = "";
+    document.getElementById("alias").value = "";
+  } else {
+    alert("Por favor, completa todos los datos!!");
+  }
+});
+
+nombreApodo.addEventListener("click", () => {
+  const texto = `Hola! Para comenzar a jugar con nosotros *te pido tu nombre y apellido* así podemos generarte un usuario! 👨🏻‍💻`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+registrar.addEventListener("click", function (e) {
+  e.preventDefault();
+  let user = document.getElementById("usuario").value;
+
+  const texto = `👑 *USUARIO CREADO* 👑
+
+📲 Para jugar ingrese aquí https://universegame.best
+*SU USUARIO ES:* ${user}
+*CONTRASEÑA:* abc123
+
+*Para cargar dinero a su cuenta CONSULTE NUESTRO CBU VIGENTE* 📩`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+
+  document.getElementById("usuario").value = "";
+
+  modal.style.display = "none";
+});
+
+
+bienvenida.addEventListener("click", function (e) {
+  e.preventDefault();
+  let user = document.getElementById("usuario2").value;
+  console.log(user);
+
+  const texto = `Hola! 👑 *Bienvenido/a Caba Prestige*  
+
+🧑🏻‍💻 *USUARIO*: ${user}
+🔐 *CONTRASEÑA*: abc123
+📱 *PLATAFORMA:* https://universegame.best
+
+🤑 *MÍNIMO DE CARGA*: $1.000
+🤑 *MINIMO DE RETIRO*: $2.000
+💰 *RETIROS Y PAGOS TODOS LOS DÍAS DE 8 AM A 00 HS*
+
+⚠️ *RECUERDE CONSULTAR SIEMPRE NUESTRO CBU SEGUNDOS ANTES DE TRANSFERIR*
+
+✅ *Cuenta a nombre de:* ${inputNombre} ✅
+*CBU:* ${inputCBU}
+*ALIAS:* ${inputAlias}
+
+Envíe el *COMPROBANTE DE TRANSFERENCIA* y debajo del mismo escriba sólo su *USUARIO ASIGNADO* 📩`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+
+  document.getElementById("usuario2").value = "";
+
+  modal2.style.display = "none";
+});
+
+info.addEventListener("click", () => {
+  const texto = `¡Hola! 😄 *Somos Caba Prestige, tu casino online de confianza.*
+
+📱En nuestra PLATAFORMA: https://universegame.best encontrarás: 
+. Slots (maquinitas)
+. Ruletas en vivo
+. Apuestas deportivas
+. Blackjack
+. Baccarat
+. Bingo
+
+*Detalles importantes:*
+💰 *Depósito mínimo:* $1.000
+💰 *Retiro mínimo:* $2.000
+💰 *Retiro máximo:* ¡No tenemos límite!
+💰 Contamos con un *sistema de pagos* (puede solicitar más info sobre el mismo)
+
+Si te interesa y queres que te generemos un usuario responde este mensaje indicándonos tu nombre y apellido! 📥`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+retiro.addEventListener("click", () => {
+  const texto = `Hola! *Felicidades por tu premio* 🙌🏼 Para retirar el dinero de tu cuenta te solicito los siguientes datos *EN ORDEN*: 
+
+➡️ *Usuario de juego:*
+➡️ *Nombre completo que figura en tu cuenta bancaria:*
+➡️ *CBU o ALIAS:*
+➡️ *Monto que desea desea retirar:*
+
+🔺Los retiros son a partir $2.000 *sin excepción*
+Una vez que completes los datos, te retiramos las fichas y tu premio será enviado al sector de pagos para que efectúen la transferencia. 
+
+🙏🏼 Por favor, te pedimos paciencia mientras procesamos tu pago. El envío del mismo *puede demorar un rato*.`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+retiroExitoso.addEventListener("click", () => {
+  const texto = `*SU PREMIO ESTÁ EN FILA* 💸
+Las fichas ya fueron retiradas de su cuenta! Cuando el pago esté listo le enviaremos el comprobante del mismo. 
+
+🙏🏼 *POR FAVOR, ESPERE QUE SE EFECTÚE EL PAGO SIN RESPONDER ESTE MENSAJE, DE LO CONTRARIO, PERDERÁ EL LUGAR EN LA FILA Y LA TRANSFERENCIA SE DEMORARÁ* ⚠️`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+premioEnviado.addEventListener("click", () => {
+  const texto = `*TU PREMIO YA FUE ENVIADO* 👏🏼🥳🎉 
+Felicitaciones! 💘 Gracias por jugar con *Caba Prestige* 🙏🏼 Disfrutalo mucho ✨ No te olvides de recomendarnos @caba.prestige.`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+sistemaDePagos.addEventListener("click", () => {
+  const texto = `✅ *RETIROS Y PAGOS DISPONIBLES TODOS LOS DÍAS DE 8 AM A 00 HS.* 
+
+⬇️ *Importante:*
+*LOS PAGOS SE REALIZAN POR ORDEN DE LLEGADA.*
+🔹 *Retiros a partir de $2.000:* Se pueden realizar múltiples retiros al día sin un límite máximo. 
+🔹 *Tiempo de espera:* El proceso del pago puede demorar entre 1 a 3 hs a partir de que se le retiran las fichas del juego. 
+🔹 *Al momento de abonar se tiene en cuenta:* Cantidad de premios en fila y nuestra disponibilidad de fondos.
+🔹 *Pagos en cuotas:* Dependiendo del monto ganado y de tus transacciones previas, el pago puede realizarse en su totalidad, en cuotas o con un plan de pagos gestionado por nuestro equipo de pagos.
+🔹 *Fondos insuficientes:* Si nuestras cuentas bancarias no disponen de fondos suficientes, utilizaremos nuestra recaudadora externa, lo que implicará un porcentaje del premio como tarifa servicio.`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+demorasPagos.addEventListener("click", () => {
+  const texto = `Estimado cliente, le informamos que *estamos experimentando demoras en los pagos*⏳ 
+Los mismos, los iremos abonando de a tandas, por lo que le pedimos paciencia, ya que si envía varios mensajes, tardaremos más en enviarle el suyo 🙏🏼💸
+
+*Si quiere continuar jugando, puede cargar fichas de su premio* 😁 Agradecemos su comprensión!`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+sistemaRecomendacion.addEventListener("click", () => {
+  const texto = `*¿QUERÉS OBTENER 1000 FICHAS GRATIS?* 🤑🎁
+
+➡️ Por cada conocido que venga de tu parte y comience a jugar con nosotros te *REGALAMOS 1000 FICHAS*.
+
+👇🏼 *¿Cómo debes hacer para recomendarnos?* 👇🏼
+A continuación te dejamos nuestro link de WhatsApp para que puedas compartirlo con tus amigos y familiares, *recorda aclararles que nos digan que vienen de tu parte (deben decirnos tu nombre de usuario)*.
+
+wa.link/cabaprestige`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+bonificacion.addEventListener("click", () => {
+  const texto = `‼️ *IMPORTANTE: INFO SOBRE LAS BONIFICACIONES* ‼️
+
+Las bonificaciones que se te asignen son para aumentar tus posibilidades de ganar! En el caso que ganes, *se efectúa el retiro de todo (incluyendo la bonificación)* pero esta misma, no se incluye en el pago del premio.💰 
+Cualquier consulta que tengas estoy a tu disposición 📩`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+solicitarComprobante.addEventListener("click", () => {
+  const texto = `Por favor te solicito que hagas clic donde dice "Compartir comprobante", ya que necesitamos tener los comprobantes con toda la información de transferencia, de esta manera agilizamos la búsqueda de tu deposito. Gracias!`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+solicitarUsuario.addEventListener("click", () => {
+  const texto = `Por favor envíeme su usuario asignado debajo del comprobante para poder cargarle las fichas. Recuerde hacerlo siempre 🙏🏼`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+publicidad.addEventListener("click", () => {
+  const texto = `Le informo que estamos en publicidad y *podemos presentar demoras a la hora de responder*. 
+Le pedimos porfavor paciencia ya que contestamos *por orden de llegada* y si envia muchos mensajes, su chat se posiciona *en el último lugar de la fila* y demoramos más en responderle! 🙏🏻`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+noIngreso.addEventListener("click", () => {
+  const texto = `Su transferencia aún no ingresó en nuestra cuenta 🤚🏼 En cuanto impacte el pago, le cargaremos las fichas! Aguarde 🙏🏼
+
+*Tenga en cuenta que las transferencias a veces cuentan con demora*.`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+cbuEquivocado.addEventListener("click", () => {
+  const texto = `Hola! Le informo que envió dinero a un cbu con el cual no estamos trabajando en este momento ❌ Dejamos especificado previamente que *POR FAVOR CONSULTE EL CBU SEGUNDOS ANTES DE TRANSFERIR*, de lo contrario puede perder su dinero.
+Aguarde a que un supervisor chequee si el dinero ingresó en la cuenta a la cual envió por error. Le advierto que si la cuenta está inactiva, su dinero no podrá ser cargado 😕`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+mantenimiento.addEventListener("click", () => {
+  const texto = `Buenas 👋🏼 Le informamos que la pagina está siendo interrumpida debido a un mantenimiento.🧑🏻‍🔧 Desde nuestro lado no podemos cargar ni descargar fichas.
+
+Les pedimos paciencia, en cuanto se solucione le avisamos! 
+
+Gracias y disculpen las molestias 🙏🏼`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+soporte.addEventListener("click", () => {
+  const texto = `Buenas!👋🏻 Por problemas e inconvenientes con la plataforma *por favor comuníquese con el soporte de la misma página* (lo puede hacer mediante el cuadro de diálogo que se encuentra arriba a su derecha). ♦️
+Ya que nosotros no podemos acceder a la configuración de las máquinas!`;
+  const elementoTemporal = document.createElement("textarea");
+  elementoTemporal.value = texto;
+  document.body.appendChild(elementoTemporal);
+  elementoTemporal.select();
+  elementoTemporal.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+  document.body.removeChild(elementoTemporal);
+});
+
+btn.onclick = function () {
+  modal.style.display = "block";
+  usuario.focus();
+};
+
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+btn2.onclick = function () {
+  modal2.style.display = "block";
+  usuario2.focus();
+};
+
+span2.onclick = function () {
+  modal2.style.display = "none";
+};
+
+window.onclick = function (event) {
+  if (event.target == modal || event.target == modal2) {
+    event.target.style.display = "none";
+  }
+};
